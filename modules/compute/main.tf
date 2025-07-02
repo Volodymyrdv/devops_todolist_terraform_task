@@ -40,12 +40,12 @@ resource "azurerm_linux_virtual_machine" "example" {
 }
 
 resource "azurerm_virtual_machine_extension" "example" {
-  name = "CustomScript"
-  virtual_machine_id = azurerm_linux_virtual_machine.example.id
+  name                 = "CustomScript"
+  virtual_machine_id   = azurerm_linux_virtual_machine.example.id
   publisher            = "Microsoft.Azure.Extensions"
   type                 = "CustomScript"
   type_handler_version = "2.0"
-  settings = <<SETTINGS
+  settings             = <<SETTINGS
     {
       "fileUris": ["https://raw.githubusercontent.com/Volodymyrdv/devops_todolist_terraform_task/refs/heads/main/install-app.sh"],
       "commandToExecute": "bash install-app.sh"
