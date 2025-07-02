@@ -1,3 +1,7 @@
+# resource "azurerm_resource_group" "example" {
+#   name = var.resource_group_name
+#   location = var.location
+# }
 module "network" {
   source                      = "./modules/network"
   dns_label                   = var.dns_label
